@@ -16,26 +16,7 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<sonar.host.url>http://13.127.188.26:9000/</sonar.host.url>
-		 <sonar.login>squ_0887e50e0f24ca7cf47ab99c1f33faa594451ada</sonar.login>
-		<!-- sonar.login>admin</sonar.login>
-		<sonar.password>May1205*</sonar.password -->
 	</properties>
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>Common components Rem Res</name>
-			<!-- Below is the url of the common component repository -->
-			<!-- <url>http://15.206.211.65:8081/repository/common.components/</url> -->
-
-			<!--  Below is the url for proxy repository
-			<url>http://15.206.211.65:8081/repository/proxy-facebook-git/</url> -->
-
-			<!-- Below url is for the group rep which include both Remote/common component rep and proxy repository under one group repo-->
-			<url>http://15.206.211.65:8081/repository/facebook-git-group-repo/</url>
-
-		</repository>
-	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,26 +50,7 @@
 			</exclusions>
 		</dependency>
 
-		<!--  common component dependency which is in remote repo/common component repo -->
-	 	<dependency>
-			<groupId>nirali.com</groupId>
-			<artifactId>restapi</artifactId>
-			<version>1.0.0</version>
-		</dependency>
 	</dependencies>
-
-	<distributionManagement>
-		<repository>
-			<id>nexus</id>
-			<name>Demo Nexus Repository</name>
-			<url>http://15.206.211.65:8081/repository/facebook-git-release/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus</id>
-			<name>Demo Nexus snapshot Repository</name>
-			<url>http://15.206.211.65:8081/repository/facebook-git-snapshot/</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<build>
 		<plugins>
