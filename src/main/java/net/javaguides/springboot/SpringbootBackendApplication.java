@@ -12,6 +12,7 @@ public class SpringbootBackendApplication extends SpringBootServletInitializer {
 		SpringApplication.run(SpringbootBackendApplication.class, args);
 	}
 
+	//To  initate the deployment in external server
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 		return builder.sources(SpringbootBackendApplication.class);
