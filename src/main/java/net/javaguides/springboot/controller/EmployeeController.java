@@ -27,7 +27,13 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
+
+	@GetMapping("/hello")
+	public String hello(){
+		return "welocme to rest tomcat integration";
+	}
+
+
 	// get all employees
 	@GetMapping("/employees")
 	public List<Employee> getAllEmployees(){
