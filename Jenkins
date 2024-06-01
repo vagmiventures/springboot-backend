@@ -1,0 +1,34 @@
+
+
+node{
+
+    def mavenHome = tool name: "Maven3.9.7"
+
+    stage('CheckOutCode'){
+        git credentialsId: 'd195895f-e753-41a2-b875-9f482db76acb', url: 'https://github.com/vagmiventures/springboot-backend.git'
+    }
+
+    stage('Build'){
+        bat "${mavenHome}/bin/mvn clean package"
+    }
+
+    stage('SonarQubeReport'){
+        bat "${mavenHome}/bin/mvn sonar:sonar"
+    }
+
+    stage('PushToNexusServer'){
+        bat "${mavenHome}/bin/mvn deploy"
+    }
+
+    stage('DeploymentToContainer'){
+       bat "copy  .\\target\\springboot-backend-0.0.1-SNAPSHOT.war E:\\Technologies\\Tomcat\\apache-tomcat-10.1.24\\webapps\\"
+    }
+
+    stage('EmailNotification'){
+        emailext body: '''Build over
+
+        Regards
+        NS''', subject: 'Build over', to: 'gopala.kustagi@gmail.com'
+    }
+
+}
