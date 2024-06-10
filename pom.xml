@@ -17,12 +17,14 @@
 
 	<properties>
 		<java.version>17</java.version>
+
+		<!--
 		<sonar.host.url>http://localhost:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>May1205*</sonar.password>
+		-->
+
 	</properties>
-
-
 	<dependencies>
 
 		<!-- Instruction dependency not to use the inbuilt tomact of spring boot-->
@@ -68,6 +70,7 @@
 
 
 	</dependencies>
+	<!--
 	<distributionManagement>
 		<repository>
 			<id>nexus</id>
@@ -80,7 +83,7 @@
 			<url>http://localhost:8081/repository/employees-snapshot/</url>
 		</snapshotRepository>
 	</distributionManagement>
-
+-->
 	<build>
 		<plugins>
 			<plugin>
