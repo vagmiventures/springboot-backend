@@ -17,17 +17,15 @@
 
 	<properties>
 		<java.version>17</java.version>
-
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!--
 		<sonar.host.url>http://localhost:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>May1205*</sonar.password>
 		-->
-
 	</properties>
 	<dependencies>
-
-		<!-- Instruction dependency not to use the inbuilt tomact of spring boot-->
+	<!-- Instruction dependency not to use the inbuilt tomact of spring boot-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -90,7 +88,13 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<artifactId>maven-clean-plugin</artifactId>
+				<version>3.3.2</version>
+				<configuration>
+					<failOnError>false</failOnError>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
 </project>
